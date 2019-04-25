@@ -339,14 +339,14 @@ const mapParametersTypes = parameters =>
     );
     if (paramWithStringType.isArray) {
       return {
-        ...paramWithStringType,
+        ...omit(paramWithStringType, 'isArray'),
         type: 'array',
         items: {
           type: mapTypesToSwaggerTypes(paramWithStringType.type)
         }
       };
     }
-    return paramWithStringType;
+    return omit(paramWithStringType, 'isArray');
   });
 
 export const mapTypesToSwaggerTypes = (type: string) => {
