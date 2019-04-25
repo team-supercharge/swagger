@@ -37,7 +37,7 @@ export const ApiImplicitQuery = (metadata: {
     param.type = Array;
     if (metadata.enum) {
       param.items = {
-        type: 'String',
+        type: 'string',
         enum: metadata.enum
       };
       param.collectionFormat = 'multi';
